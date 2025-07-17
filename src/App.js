@@ -45,7 +45,7 @@ const MEMBERS = [
 const BRET = {
   name: 'Bret Hart',
   image: process.env.PUBLIC_URL + '/bret_hart.jpg',
-  bio: 'Bret "The Hitman" Hart, legendary wrestler and style icon, rocks the BlackPink tights with pride! Excellence of execution meets excellence of fashion.',
+  bio: 'Best there is, best there was, best there ever will be.',
   webhookUrl: 'WEBHOOK_BRET', // placeholder
 };
 
@@ -85,6 +85,17 @@ function MainPage() {
             <p className="catch-phrase">{member.catchPhrase}</p>
           </div>
         ))}
+        {/* Add Bret Hart column */}
+        <div key={BRET.name} className="member-column">
+          <h2
+            onClick={() => navigate('/bret')}
+            className="member-name"
+            style={{ cursor: 'pointer' }}
+          >
+            {BRET.name}
+          </h2>
+          <p className="catch-phrase">{BRET.bio}</p>
+        </div>
       </div>
       <div className="blackpink-group-img-wrapper">
         <img
